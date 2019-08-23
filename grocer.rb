@@ -1,5 +1,6 @@
 def consolidate_cart(cart)
   # code here
+<<<<<<< HEAD
  consolidated_cart = {}
   cart.map {|cart_item_hash|
     if consolidated_cart.key?(cart_item_hash.keys.first) == true 
@@ -10,6 +11,18 @@ def consolidate_cart(cart)
     end
   }
   return consolidated_cart
+=======
+ newhash = {}
+  cart.map {|index|
+    if newhash.key?(index.keys.first) == true 
+      newhash[index.keys.first][:count] += 1 
+    else
+      newhash[index.keys.first] = index.keys.first
+      newhash[index.keys.first][:count] = 1 
+    end
+  }
+  return newhash
+>>>>>>> 4b6098485f7049278a06958aa67b0fa8babaf24a
 end
 
 def apply_coupons(cart, coupons)
